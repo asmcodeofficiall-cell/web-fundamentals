@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #dcdcdc;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+@media (max-width: 650px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+.main-panel, .sidebar {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-panel {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+.add-item-row {
+    display: flex;
+    gap: 10px;
+}
+
+.add-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+hr.divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+.item-list {
+    list-style: none;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.item-name {
+    flex: 1;
+    font-size: 18px;
+}
+
+.item-name.crossed {
+    text-decoration: line-through;
+}
+
+.edit-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-right: 10px;
+    max-width: 150px;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 120px;
+    justify-content: center;
+}
+
+.item-actions {
+    display: flex;
+    gap: 5px;
+    width: 140px;
+    justify-content: flex-end;
+}
+
+.amount-badge {
+    background-color: #eee;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.summary-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.product-item {
+    background-color: gray;
+    display: inline-block;
+    height: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+.product-item.crossed-tag {
+    text-decoration: line-through;
+}
+
+.amount {
+    background-color: yellow;
+    border-radius: 10px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    color: black;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 5px;
+    vertical-align: top;
+    margin-top: -3px;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+}
+
+.btn-blue {
+    background-color: #3498db;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.btn-silver {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.btn-round {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2px;
+}
+
+.btn-square {
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-red {
+    background-color: #e74c3c;
+}
+
+.btn-red.disabled {
+    background-color: #f5b7b1;
+    cursor: not-allowed;
+}
+
+.btn-green {
+    background-color: #2ecc71;
+}
+
+.btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    transform-origin: bottom center;
+    background-color: #6a0dad;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.btn:hover::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+.author-badge {
+    position: fixed;
+    bottom: -35px;
+    left: 20px;
+    background-color: #300050;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 15px 15px 0 0;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.author-badge:hover {
+    bottom: 0;
+    background-color: #6a0dad;
+}
+
+.badge-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.badge-name {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    .author-badge {
+        position: absolute;
+        bottom: 0;
+        background-color: white !important;
+        border: 2px solid #6a0dad !important;
+    }
+
+    .author-badge .badge-title {
+        display: none;
+    }
+
+    .author-badge .badge-name {
+        color: black;
+        margin-top: 0;
+    }
+}
