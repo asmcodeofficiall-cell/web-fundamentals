@@ -1,0 +1,172 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#settings {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 1.5em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    color: #000;
+}
+
+.controls {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+select {
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#status {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+#game-window {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+
+#top-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ddd;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+.led {
+    background-color: #000;
+    color: #f00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 4px 10px;
+    line-height: 1;
+    width: 50px;
+    text-align: center;
+}
+
+#smiley-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#smiley-btn:active {
+    background-color: #ccc;
+}
+
+#grid-container {
+    border: 2px solid #999;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+#wdr-container {
+    position: absolute;
+    top: -28px;
+    left: 0px; 
+}
+/* Прибираємо рамку таблиці */
+#wdr-container .wdr-grid-layout {
+    border: none !important;
+    overflow: hidden !important;
+}
+
+/* Ховаємо заголовки колонок */
+#wdr-container .wdr-header {
+    visibility: hidden !important;
+    font-size: 0px !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    border: none !important;
+}
+
+/* Закрита клітинка */
+#wdr-container .wdr-cell.hidden {
+    background-color: #ccc !important;
+    border: 1px solid #fff !important;
+}
+
+/* Відкрита клітинка */
+#wdr-container .wdr-cell.revealed {
+    background-color: #eee !important;
+    border: 1px solid #ccc !important;
+}
+
+/* Клітинка з міною */
+#wdr-container .wdr-cell.mine {
+    background-color: #f00 !important;
+    border: 1px solid #900 !important;
+}
+
+/* Базовий стиль клітинки */
+#wdr-container .wdr-cell {
+    cursor: pointer !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    border: none !important;
+}
+
+/* Ефект наведення миші */
+#wdr-container .wdr-cell:hover {
+    filter: brightness(0.9);
+}
+
+/* Вимикаємо стандартне виділення */
+#wdr-container .wdr-row:hover .wdr-cell,
+#wdr-container .wdr-cell.wdr-selected,
+#wdr-container .wdr-cell-active,
+#wdr-container .wdr-selected {
+    background-color: inherit !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.ms-cell {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background-color 0.1s;
+    color: #000;
+}
+.ms-cell:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}

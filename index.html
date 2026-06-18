@@ -2,85 +2,35 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>BuyList</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper - WebDataRocks</title>
+    <link href="https://cdn.webdatarocks.com/latest/webdatarocks.min.css" rel="stylesheet"/>
+    <script src="https://cdn.webdatarocks.com/latest/webdatarocks.js"></script>
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-    <main class="container">
-        <section class="main-panel">
-            <form class="add-item-row" onsubmit="return false;">
-                <input type="text" placeholder="Назва товару" class="add-input" required>
-                <button type="submit" class="btn btn-blue" data-tooltip="Додати новий товар до списку">Додати</button>
-            </form>
-            
-            <hr class="divider">
-
-            <ul class="item-list">
-                <li class="item">
-                    <span class="item-name crossed">Помідори</span>
-                    <div class="item-controls center-controls">
-                        <span class="amount-badge">2</span>
-                    </div>
-                    <div class="item-actions">
-                        <button class="btn btn-silver" data-tooltip="Повернути товар у список">Не куплено</button>
-                    </div>
-                </li>
-                
-                <hr class="divider">
-
-                <li class="item">
-                    <span class="item-name">Печиво</span>
-                    <div class="item-controls">
-                        <button class="btn btn-round btn-red" data-tooltip="Зменшити кількість">-</button>
-                        <span class="amount-badge">2</span>
-                        <button class="btn btn-round btn-green" data-tooltip="Збільшити кількість">+</button>
-                    </div>
-                    <div class="item-actions">
-                        <button class="btn btn-silver" data-tooltip="Відмітити як куплене">Куплено</button>
-                        <button class="btn btn-square btn-red" data-tooltip="Видалити товар">×</button>
-                    </div>
-                </li>
-                
-                <hr class="divider">
-
-                <li class="item">
-                    <input type="text" value="Сир" class="edit-input">
-                    <div class="item-controls">
-                        <button class="btn btn-round btn-red disabled" data-tooltip="Мінімум 1">-</button>
-                        <span class="amount-badge">1</span>
-                        <button class="btn btn-round btn-green" data-tooltip="Збільшити кількість">+</button>
-                    </div>
-                    <div class="item-actions">
-                        <button class="btn btn-silver" data-tooltip="Відмітити як куплене">Куплено</button>
-                        <button class="btn btn-square btn-red" data-tooltip="Видалити товар">×</button>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <aside class="sidebar">
-            <section class="summary-section">
-                <h2>Залишилося</h2>
-                <hr class="divider">
-                <div class="tag-list">
-                    <span class="product-item">Печиво <span class="amount">2</span></span>
-                    <span class="product-item">Сир <span class="amount">1</span></span>
-                </div>
-            </section>
-            
-            <section class="summary-section">
-                <h2>Куплено</h2>
-                <hr class="divider">
-                <div class="tag-list">
-                    <span class="product-item crossed-tag">Помідори <span class="amount">2</span></span>
-                </div>
-            </section>
-        </aside>
-    </main>
-
-    <footer class="author-badge">
-        <span class="badge-title">BuyList</span>
-        <span class="badge-name">Гриценко Богдан Олександрович</span>
-    </footer>
+    <div id="settings">
+        <h1>Сапер</h1>
+        <div class="controls">
+            <select id="difficulty">
+                <option value="beginner">Новачок</option>
+                <option value="intermediate">Середній</option>
+                <option value="expert">Експерт</option>
+            </select>
+        </div>
+        <div id="status">Граємо!</div>
+    </div>
+    
+    <div id="game-window">
+        <div id="top-panel">
+            <div id="mine-counter" class="led">010</div>
+            <button id="smiley-btn">🙂</button>
+            <div id="timer" class="led">000</div>
+        </div>
+        <div id="grid-container">
+            <div id="wdr-container"></div>
+        </div>
+    </div>
+    <script src="game.js"></script>
 </body>
 </html>
