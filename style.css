@@ -100,13 +100,11 @@ select {
     top: -28px;
     left: 0px; 
 }
-/* Прибираємо рамку таблиці */
 #wdr-container .wdr-grid-layout {
     border: none !important;
     overflow: hidden !important;
 }
 
-/* Ховаємо заголовки колонок */
 #wdr-container .wdr-header {
     visibility: hidden !important;
     font-size: 0px !important;
@@ -115,25 +113,21 @@ select {
     border: none !important;
 }
 
-/* Закрита клітинка */
 #wdr-container .wdr-cell.hidden {
     background-color: #ccc !important;
     border: 1px solid #fff !important;
 }
 
-/* Відкрита клітинка */
 #wdr-container .wdr-cell.revealed {
     background-color: #eee !important;
     border: 1px solid #ccc !important;
 }
 
-/* Клітинка з міною */
 #wdr-container .wdr-cell.mine {
     background-color: #f00 !important;
     border: 1px solid #900 !important;
 }
 
-/* Базовий стиль клітинки */
 #wdr-container .wdr-cell {
     cursor: pointer !important;
     overflow: hidden !important;
@@ -143,12 +137,10 @@ select {
     border: none !important;
 }
 
-/* Ефект наведення миші */
 #wdr-container .wdr-cell:hover {
     filter: brightness(0.9);
 }
 
-/* Вимикаємо стандартне виділення */
 #wdr-container .wdr-row:hover .wdr-cell,
 #wdr-container .wdr-cell.wdr-selected,
 #wdr-container .wdr-cell-active,
